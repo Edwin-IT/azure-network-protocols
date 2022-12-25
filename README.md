@@ -6,10 +6,6 @@
 In this tutorial, we observe various network traffic to and from Azure Virtual Machines with Wireshark as well as experiment with Network Security Groups. <br />
 
 
-<h2>Video Demonstration</h2>
-
-- ### [YouTube: Azure Virtual Machines, Wireshark, and Network Security Groups](https://www.youtube.com)
-
 <h2>Environments and Technologies Used</h2>
 
 - Microsoft Azure (Virtual Machines/Compute)
@@ -70,51 +66,44 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <h2>Part 2</h2>
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/zRumWX6.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/pWUMu9U.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/RscsGB4.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/8GHl3cD.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/Tc3YQ2a.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 - Step 1: Connect to Windows 10 VM with Remote Desktop. Then install Wireshark in the VM. Open Wireshark and filter for ICMP traffic only. Get VM2’s private IP address, then ping it from VM1. In WireShark, there will be requests and replys meaning the ping has been successful. Next, initiate a perpetual ping with ping “Private IP address of VM2” -t. Then Go to VM2 network watcher and deny inbound ICMP traffic. Notice in VM1 that ICMP is timing out. If inbound ICMP traffic is allowed again, ICMP traffic will resume and be successful. To stop ping write control -c
  
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/pts1Fmp.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/smSFPkO.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 - Step 2: Open Wireshark and filter for SSH traffic only. In VM1 get into VM2 comand line by typing ssh username@private ip address of VM2. To exit, type exit and press enter.
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/4v5Ie9u.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 - Step 3: Now filter for DHCP traffic only. In command line type(ipconfig /renew) to give VM1 a new IP address.
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/hmKOTeX.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 - Step 4: Now filter for DNS traffic. In VM1 command line type nslookup to see what google.com and disney.com’s IP addresses are.
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/Xt2gZ60.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 - Step 5: Now filter for RDP traffic by typing (tcp.port == 3389) in WireShark. It is spamming non stop now because the RDP (protocol) is constantly showing you a live stream from one computer to another, therefor traffic is always being transmitted.
  
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/gNWyTpA.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 - Step 6: Close the Remote Desktop connection then Delete the Resource Group.
-</p>
-<br />
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 </p>
 <br />
