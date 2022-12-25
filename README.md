@@ -46,21 +46,21 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <h2>Part 1</h2>
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/1wYq7o5.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/HEmhOJ8.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 - Step 1: While creating first virtual machine, name  a resource group called RG-Lab-2, that will create a resource group at the same time as the VM. In networking tab, a new Virtual Network and subnet will be created. Finally Review + Create, then Create.
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/KHtxLhH.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/ZyOtjU9.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 - Step 2: Select RG-Lab-2 as resource group while creating virtual machine. In networking tab, select the same Virtual Network used in VM1, which is RG-Lab-2-vnet. Finally Review + Create, then Create.
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/vecbTz2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 - Step 3: In home, search for Network Watcher. In Network Watcher, go to Topology. Select resource group, and Vnet. Notice that the VM are connected to each other with the same Vnet.
@@ -75,17 +75,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-- Step 1: Observe ICMP Traffic
-a.              Use Remote Desktop to connect to your Windows 10 Virtual Machine
-b.             Install Wireshark in VM
-c.              Open Wireshark and filter for ICMP traffic only
-d.             Get VM2’s private IP address, then ping it from VM1
-e.              In WireShark, there will be requests and replys meaning the ping has been successful
-f.               Initiate a perpetual ping with ping “Private IP address of VM2” -t
-g.             Go to VM2 network watcher and deny inbound ICMP traffic
-h.             Notice in VM1 that ICMP is timing out
-i.               If inbound ICMP traffic is allowed again, ICMP traffic will resume and be successful
-j.               To stop ping write control -c
+- Step 1: Connect to Windows 10 VM with Remote Desktop. Then install Wireshark in the VM. Open Wireshark and filter for ICMP traffic only. Get VM2’s private IP address, then ping it from VM1. In WireShark, there will be requests and replys meaning the ping has been successful. Next, initiate a perpetual ping with ping “Private IP address of VM2” -t. Then Go to VM2 network watcher and deny inbound ICMP traffic. Notice in VM1 that ICMP is timing out. If inbound ICMP traffic is allowed again, ICMP traffic will resume and be successful. To stop ping write control -c
  
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
